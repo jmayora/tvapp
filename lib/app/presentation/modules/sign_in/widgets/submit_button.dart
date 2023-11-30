@@ -10,7 +10,7 @@ class SubmitButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final fetching = ref.read(signInControllerProvider).fetching;
+    final fetching = ref.watch(signInControllerProvider).fetching;
 
     if (fetching) {
       return const CircularProgressIndicator();
@@ -36,6 +36,7 @@ class SubmitButton extends ConsumerWidget {
     final password = signInState.password;
 
     ref.read(signInControllerProvider.notifier).setFetching(true);
+
     final result = await authenticationRepository.signIn(
       username,
       password,

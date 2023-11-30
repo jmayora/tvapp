@@ -8,19 +8,19 @@ part 'sign_in_controller.g.dart';
 class SignInController extends _$SignInController {
   @override
   SignInState build() {
-    return SignInState();
+    return const SignInState(username: '', password: '', fetching: false);
   }
 
   void setUsername(String text) {
-    state.username = text;
+    state = state.copyWith(username: text);
   }
 
   void setPassword(String text) {
-    state.password = text;
+    state = state.copyWith(password: text);
   }
 
   void setFetching(bool value) {
-    state.fetching = value;
+    state = state.copyWith(fetching: value);
   }
 }
 

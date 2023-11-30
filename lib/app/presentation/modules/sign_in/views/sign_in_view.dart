@@ -16,8 +16,7 @@ class SignInView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final signInState = ref.watch(signInControllerProvider);
-    final fetching = signInState.fetching;
+    final fetching = ref.watch(signInControllerProvider).fetching;
     return Scaffold(
         body: SafeArea(
       child: Padding(
